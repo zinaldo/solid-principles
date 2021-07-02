@@ -1,10 +1,7 @@
 package com.fastzina.solid.model;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.time.LocalDate;
-
-import com.fastzina.solid.exception.ValidationException;
 
 public class Employee {
 
@@ -21,12 +18,8 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public void reajustarSalario(BigDecimal raise) {
-		BigDecimal percentualReajuste = raise.divide(salary, RoundingMode.HALF_UP);
-		if (percentualReajuste.compareTo(new BigDecimal("0.4")) > 0) {
-			throw new ValidationException("Raise can't be higher than 40% of the current salary!");
-		}
-		this.salary = this.salary.add(raise);
+	public void updateSalary(BigDecimal updatedSalary) {
+		this.salary = updatedSalary;
 		this.lastSalaryRaise = LocalDate.now();
 	}
 
