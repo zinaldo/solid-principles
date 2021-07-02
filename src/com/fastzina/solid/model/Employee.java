@@ -4,55 +4,48 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Employee {
-
-	private String name;
-	private String id;
-	private Role role;
-	private BigDecimal salary;
+	private EmployeePersonalData personalData;
 	private LocalDate lastSalaryRaiseDate;
 
 	public Employee(String name, String id, Role role, BigDecimal salary) {
-		this.name = name;
-		this.id = id;
-		this.role = role;
-		this.salary = salary;
+		this.personalData = new EmployeePersonalData(name, id, role, salary);
 	}
 
 	public void updateSalary(BigDecimal updatedSalary) {
-		this.salary = updatedSalary;
+		this.personalData.setSalary(updatedSalary);
 		this.lastSalaryRaiseDate = LocalDate.now();
 	}
 
 	public String getName() {
-		return name;
+		return this.personalData.getName();
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.personalData.setName(name);
 	}
 
 	public String getId() {
-		return id;
+		return this.personalData.getId();
 	}
 
 	public void setId(String id) {
-		this.id = id;
+		this.personalData.setId(id);
 	}
 
 	public Role getRole() {
-		return role;
+		return this.personalData.getRole();
 	}
 
 	public void setRole(Role role) {
-		this.role = role;
+		this.personalData.setRole(role);
 	}
 
 	public BigDecimal getSalary() {
-		return salary;
+		return this.personalData.getSalary();
 	}
 
 	public void setSalary(BigDecimal salary) {
-		this.salary = salary;
+		this.personalData.setSalary(salary);
 	}
 
 	public LocalDate getLastSalaryRaiseDate() {
