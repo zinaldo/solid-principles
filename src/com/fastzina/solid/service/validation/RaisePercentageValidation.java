@@ -1,4 +1,4 @@
-package com.fastzina.solid.service;
+package com.fastzina.solid.service.validation;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
