@@ -9,7 +9,7 @@ public class Employee {
 	private String id;
 	private Role role;
 	private BigDecimal salary;
-	private LocalDate lastSalaryRaise;
+	private LocalDate lastSalaryRaiseDate;
 
 	public Employee(String name, String id, Role role, BigDecimal salary) {
 		this.name = name;
@@ -20,7 +20,7 @@ public class Employee {
 
 	public void updateSalary(BigDecimal updatedSalary) {
 		this.salary = updatedSalary;
-		this.lastSalaryRaise = LocalDate.now();
+		this.lastSalaryRaiseDate = LocalDate.now();
 	}
 
 	public String getName() {
@@ -55,12 +55,12 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public LocalDate getLastSalaryRaise() {
-		return lastSalaryRaise;
+	public LocalDate getLastSalaryRaiseDate() {
+		return lastSalaryRaiseDate;
 	}
 
-	public void setLastSalaryRaise(LocalDate lastSalaryRaise) {
-		this.lastSalaryRaise = lastSalaryRaise;
+	public void setLastSalaryRaiseDate(LocalDate lastSalaryRaiseDate) {
+		this.lastSalaryRaiseDate = lastSalaryRaiseDate;
 	}
 
 }
